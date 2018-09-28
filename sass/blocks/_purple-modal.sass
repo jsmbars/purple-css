@@ -252,6 +252,9 @@ $block: ".purple-modal"
     &:not(:last-child)
       margin-bottom: 30px
 
+    &_justify_center
+      text-align: center
+
 
   // $Modal window actions
   &__actions
@@ -290,6 +293,20 @@ $block: ".purple-modal"
 
       @media screen and (max-width: 480px), screen and (max-height: 480px)
         max-width: 200px
+
+    &_size_auto
+      width: auto
+      max-width: 100%
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: 100%
+
+    &_size_actual
+      width: auto
+      max-width: none
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: none
 
 
   // $Modal window title
@@ -422,6 +439,7 @@ $block: ".purple-modal"
 
   @at-root
     // $Modal window portal
+    .ReactModalPortal,
     &-portal
 
       // $Modal window portal MOD: state hidden
@@ -433,6 +451,7 @@ $block: ".purple-modal"
 
 
     // $Modal window overlay
+    .ReactModal__Overlay,
     &-overlay
       position: fixed !important
       top: 0 !important
@@ -444,3 +463,12 @@ $block: ".purple-modal"
       overflow-x: hidden !important
       overflow-y: auto !important
       background-color: rgba(0,0,0,.75) !important
+
+
+    .ReactModal__Body--open
+      overflow: hidden
+
+
+    .ReactModal__Body--open.iosBugFixModalInput
+      position: fixed
+      overflow: visible
