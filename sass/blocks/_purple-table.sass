@@ -34,6 +34,8 @@ $block: ".purple-table"
   &_type_common
     display: table
 
+  &_page_invites-index
+
 
   &__sorting
     position: absolute
@@ -77,7 +79,6 @@ $block: ".purple-table"
     &_type_desc
       &:before
         content: "\e918"
-
 
 
   // $Common table group
@@ -272,7 +273,7 @@ $block: ".purple-table"
     flex-direction: column
     justify-content: center
     align-items: stretch
-    min-height: 40px
+    min-height: 60px
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
@@ -294,24 +295,40 @@ $block: ".purple-table"
 
     // $Common table cell first column
     &:nth-child(1)
+      #{$block}_page_invites-index &
+        width: 20%
 
     // $Common table cell second column
     &:nth-child(2)
+      #{$block}_page_invites-index &
+        width: 10%
 
     // $Common table cell third column
     &:nth-child(3)
+      #{$block}_page_invites-index &
+        width: 14%
 
     // $Common table cell fourth column
     &:nth-child(4)
+      #{$block}_page_invites-index &
+        width: 12%
 
     // $Common table cell fifth column
     &:nth-child(5)
+      #{$block}_page_invites-index &
+        width: 12%
 
     // $Common table cell sixth column
     &:nth-child(6)
+      #{$block}_page_invites-index &
+        width: 12%
 
     // $Common table cell seventh column
     &:nth-child(7)
+      #{$block}_page_invites-index &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 130px
 
     // $Common table cell eighth column
     &:nth-child(8)
@@ -328,6 +345,10 @@ $block: ".purple-table"
     &_role_footer
       font-weight: 600
       line-height: 1
+
+    &_role_header
+      #{$block}_page_invites-index &
+        text-align: center
 
     &_no-border
       &:not(:last-child)
@@ -398,11 +419,6 @@ $block: ".purple-table"
       background-color: $c-gray-ultra-light
 
 
-    @each $range, $color in $c-heatmap
-      &_highlight_heatmap-#{$range}
-        background-color: #{$color}
-
-
   // $Common table info
   &__info
     width: 100%
@@ -421,6 +437,11 @@ $block: ".purple-table"
     font-size: 14px
     font-weight: 400
     color: $c-text-primary
+
+    #{$block}_page_invites-index #{$block}__cell:nth-child(2) &,
+    #{$block}_page_invites-index #{$block}__cell:nth-child(4) &,
+    #{$block}_page_invites-index #{$block}__cell:nth-child(6) &
+      text-align: center
 
     &:before
       display: inline-block
@@ -443,6 +464,14 @@ $block: ".purple-table"
       &:before
         content: '\e901'
 
+    &_icon_email
+      &:before
+        content: '\e91f'
+
+    &_icon_alert
+      &:before
+        content: '\e911'
+
     // $Common table text MOD: adjust no wrap
     &_adjust_no-wrap
       white-space: nowrap
@@ -454,18 +483,34 @@ $block: ".purple-table"
       word-break: break-word
       hyphens: auto
 
-    @each $range, $color in $c-heatmap
-      #{$block}__cell_highlight_heatmap-#{$range} &
-        @extend %heatmap-cell-text
+    // $Common table text MOD: role action
+    &_adjust_action
+      cursor: pointer
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+    // $Common table text MOD: color accent red
+    &_color_accent-red
+      color: $c-accent-red
+
+    // $Common table text MOD: color accent blue
+    &_color_accent-blue
+      color: $c-accent-blue
+
 
   &__text-nowrap
     white-space: nowrap
 
+
   &__text-bold
     font-weight: 600
 
+
   &__text-light
     font-weight: 300
+
 
   &__text-meta,
   &__text-line
@@ -474,10 +519,12 @@ $block: ".purple-table"
     &:not(:last-child)
       margin-bottom: 5px
 
+
   &__text-meta
     font-family: $f-sans
     color: $c-text-secondary
     font-size: 12px
+
 
   &__text-number
     font-size: 18px
