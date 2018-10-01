@@ -87,14 +87,14 @@ $block: ".purple-overview"
     align-items: stretch
 
     &:not(:last-child)
-      margin-right: 30px
+      padding-right: 30px
 
       @media screen and (max-width: 960px)
-        margin-right: 0
-        margin-bottom: 30px
+        padding-right: 0
+        padding-bottom: 30px
 
       @media screen and (max-width: 480px)
-        margin-bottom: 25px
+        padding-bottom: 25px
 
     // $Overview cards item MOD: size half
     &_size_half
@@ -111,6 +111,61 @@ $block: ".purple-overview"
         width: 100%
 
     // $Overview cards item MOD: size fourth
+    &_size_fourth
+      width: 25%
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+
+  // $Overview flow
+  &__flow
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    flex-wrap: wrap
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 30px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 25px
+
+
+  // $Overview flow item
+  &__flow-item
+    flex-grow: 0
+    flex-shrink: 1
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+
+    &:not(:last-child)
+      padding-right: 30px
+      padding-bottom: 60px
+
+      @media screen and (max-width: 960px)
+        padding-right: 0
+
+
+    // $Overview flow item MOD: size half
+    &_size_half
+      width: 50%
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+    // $Overview flow item MOD: size third
+    &_size_third
+      width: 33.3%
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+    // $Overview flow item MOD: size fourth
     &_size_fourth
       width: 25%
 
