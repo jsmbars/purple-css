@@ -18,6 +18,12 @@ $block: ".purple-activity"
   display: block
   width: 100%
 
+  &:not(:last-child)
+    margin-bottom: 30px
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
 
   // $Activity list
   &__list
@@ -145,4 +151,13 @@ $block: ".purple-activity"
   // $Activity text faded
   &__text-faded
     color: $c-text-secondary
+
+
+  // $Activity actions
+  &__actions
+    text-align: center
+
+
+  // $Activity action
+  &__action
 
