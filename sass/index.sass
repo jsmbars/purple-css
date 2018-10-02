@@ -6,6 +6,7 @@
 //
 // VENDOR...............................
 //  $React-select.......................
+//  $React-dates........................
 //
 // HELPERS..............................Variables, mixins, elements
 //  $Fonts..............................Offline and online fonts
@@ -62,6 +63,10 @@
 
 // $React-select
 @import ./vendor/react-select/default.scss
+
+// $React-dates
+// Support of the old react-dates version, new version uses inline styles
+@import ./vendor/react-dates/styles.scss
 
 
 ////////////////////////////////////////
@@ -206,3 +211,6 @@
 @import './blocks/purple-details'
 
 // Restyled existing vendor modules
+
+// $Date control (based on react-dates, includes single date / week / date range pickers)
+@import './blocks/date-control'
