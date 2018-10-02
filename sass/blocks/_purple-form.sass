@@ -84,6 +84,7 @@ $block: ".purple-form"
     // $Common form row MOD: adjust wrap-xs
     // $Common form row MOD: adjust wrap-s-major
     &_adjust_wrap-s-major,
+    &_adjust_wrap-s-minor,
     &_adjust_wrap-xs
       flex-direction: row
 
@@ -92,6 +93,10 @@ $block: ".purple-form"
 
     &_adjust_wrap-s-major
       @media screen and (max-width: 640px)
+        flex-direction: column
+
+    &_adjust_wrap-s-minor
+      @media screen and (max-width: 480px)
         flex-direction: column
 
     &_adjust_wrap-xs
@@ -124,6 +129,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           flex-grow: 0
           flex-shrink: 1
@@ -131,6 +137,12 @@ $block: ".purple-form"
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -154,6 +166,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           flex-grow: 0
           flex-shrink: 1
@@ -161,6 +174,12 @@ $block: ".purple-form"
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -184,6 +203,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           flex-grow: 0
           flex-shrink: 1
@@ -191,6 +211,12 @@ $block: ".purple-form"
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -214,6 +240,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           flex-grow: 0
           flex-shrink: 1
@@ -221,6 +248,12 @@ $block: ".purple-form"
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -244,6 +277,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           flex-grow: 0
           flex-shrink: 1
@@ -251,6 +285,12 @@ $block: ".purple-form"
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -272,11 +312,16 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           width: auto
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           width: 100%
 
       @media screen and (max-width: 400px)
@@ -296,6 +341,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           flex-grow: 0
           flex-shrink: 1
@@ -303,6 +349,12 @@ $block: ".purple-form"
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-s-minor &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -329,6 +381,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           margin-right: 30px
           margin-bottom: 0
@@ -344,6 +397,13 @@ $block: ".purple-form"
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-xs &
           margin-right: 25px
+
+        #{$block}__row_adjust_wrap-s-major &
+          margin-bottom: 25px
+
+        #{$block}__row_adjust_wrap-s-minor &
+          margin-right: 0
+          margin-bottom: 25px
 
       @media screen and (max-width: 400px)
         #{$block}__row_adjust_wrap-xs &
@@ -361,6 +421,7 @@ $block: ".purple-form"
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-s-major &,
+        #{$block}__row_adjust_wrap-s-minor &,
         #{$block}__row_adjust_wrap-xs &
           margin-right: 0
           margin-bottom: 0
@@ -372,6 +433,10 @@ $block: ".purple-form"
 
       @media screen and (max-width: 480px)
         margin-bottom: 0
+
+        #{$block}__row_adjust_wrap-s-minor &
+          margin-right: 0
+          margin-bottom: 0
 
         #{$block}__row_adjust_nowrap &,
         #{$block}__row_adjust_wrap-xs &
