@@ -62,8 +62,15 @@ $block: ".purple-form-checkbox"
 
   // $Common form checkbox input label
   &__input-label
-    display: block
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
     cursor: pointer
+
+    // Fix nowrap issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      display: block
 
     // $Common form checkbox input label MOD: adjust field
     // $Common form checkbox input label MOD: adjust field fluid
