@@ -86,14 +86,13 @@ $block: ".purple-form-interval"
     justify-content: flex-start
     align-items: flex-end
 
+    #{$block}_adjust_clear &
+      padding-right: 22px
+
     @media screen and (max-width: 400px)
       #{$block}_adjust_wrap-xs &
         flex-direction: column
         align-items: flex-start
-
-    // $Common form interval range MOD: adjust clear action
-    &_adjust_clear
-      padding-right: 22px
 
 
   // $Common form interval item

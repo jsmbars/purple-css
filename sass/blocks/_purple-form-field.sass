@@ -36,12 +36,15 @@ $block: ".purple-form-field"
   // $Common form field MOD: state error
   &_state_error
 
-  // $Common form field MOD: no top label
-  &_no-label
-    padding-top: 20px
-
   // $Common form field MOD:  adjust quick access search
   &_adjust_quick-access-search
+
+  // $Common form field MOD: adjust no top label
+  &_adjust_no-label
+    padding-top: 20px
+
+  // $Common form field MOD: adjust clearable
+  &_adjust_clear
 
 
   // $Common form field label
@@ -150,8 +153,7 @@ $block: ".purple-form-field"
   &__input
     position: relative
 
-    // $Common form field input MOD: adjust clear action
-    &_adjust_clear
+    #{$block}_adjust_clear &
       padding-right: 22px
 
     &:before

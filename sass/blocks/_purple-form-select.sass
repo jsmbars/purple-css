@@ -33,9 +33,11 @@ $block: ".purple-form-select"
     justify-content: flex-end
     align-items: center
 
-  // $Common form select MOD: no top label
-  &_no-label
+  // $Common form select MOD: adjust no top label
+  &_adjust_no-label
     padding-top: 20px
+
+  &_adjust_clear
 
 
   // $Common form select label
@@ -138,8 +140,7 @@ $block: ".purple-form-select"
   &__control
     position: relative
 
-    // $Common form select control MOD: adjust clear action
-    &_adjust_clear
+    #{$block}_adjust_clear &
       padding-right: 22px
 
     // $Common form select input CONTEXT: $Common form select MOD: role control
