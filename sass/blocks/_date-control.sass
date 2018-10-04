@@ -138,7 +138,7 @@ $block: ".date-control"
           padding: 2px 5px
           font-size: 14px
           line-height: 1
-          color: #808080
+          color: $c-gray-medium
 
     & .DateRangePickerInput_clearDates_svg
       @media screen and (max-width: 480px)
@@ -152,9 +152,9 @@ $block: ".date-control"
       flex-shrink: 1
       position: relative
       width: auto
-      border: 1px solid #d8d8d8
+      border: 1px solid $c-border-primary
       border-radius: 2px
-      background-color: #FFF
+      background-color: $c-bg-light
 
 
   // $Date range picker MOD: type interval
@@ -447,56 +447,56 @@ $block: ".date-control"
         height: 0 !important
 
       &:hover
-        background: #b2d7f1
-        border: 1px solid #80bce8
-        color: #0060a6
+        background: lighten($c-accent-primary, 8)
+        border: 1px lighten($c-accent-primary, 8)
+        color: $c-text-light
 
 
     td.CalendarDay__hovered_offset
-      background: #b2d7f1
-      border: 1px solid #80bce8
-      color: #0060a6
+      background: lighten($c-accent-primary, 8)
+      border: 1px solid lighten($c-accent-primary, 8)
+      color: $c-text-light
 
       &:hover
-        background: #b2d7f1
-        border: 1px solid #80bce8
-        color: #0060a6
+        background: lighten($c-accent-primary, 8)
+        border: 1px solid lighten($c-accent-primary, 8)
+        color: $c-text-light
 
 
     td.CalendarDay__selected_span
-      background: #66ace2
-      border: 1px solid #3394da
-      color: #fff
+      background: $c-accent-primary
+      border: 1px solid darken($c-accent-primary, 4)
+      color: $c-text-light
 
       &:hover
-        background: #66ace2
-        border: 1px solid #3394da
-        color: #fff
+        background: $c-accent-primary
+        border: 1px solid darken($c-accent-primary, 4)
+        color: $c-text-light
 
 
     td.CalendarDay__selected,
     td.CalendarDay__selected_start,
     td.CalendarDay__selected_end
-      background: #006fc0
-      border: 1px solid #006fc0
-      color: #fff
+      background: darken($c-accent-primary, 8)
+      border: 1px solid darken($c-accent-primary, 8)
+      color: $c-text-light
 
       &:hover
-        background: #006fc0
-        border: 1px solid #006fc0
-        color: #fff
+        background: darken($c-accent-primary, 8)
+        border: 1px solid darken($c-accent-primary, 8)
+        color: $c-text-light
 
 
     .DateRangePicker_picker,
     .SingleDatePicker_picker
       td.CalendarDay__selected_span
         &:hover
-          background: #b2d7f1
-          border: 1px solid #80bce8
-          color: #0060a6
+          background: lighten($c-accent-primary, 8)
+          border: 1px solid lighten($c-accent-primary, 8)
+          color: $c-text-light
 
     .DayPicker_focusRegion
-      border-bottom: 1px solid #eee
+      border-bottom: 1px solid $c-border-secondary
 
 
     .DayPicker_preview
@@ -554,7 +554,7 @@ $block: ".date-control"
         padding: 3px 10px
         color: $c-accent-red
         border: 2px solid $c-accent-red
-        background-color: trnsparent
+        background-color: transparent
 
         &:before
           content: '\e909'
@@ -567,7 +567,7 @@ $block: ".date-control"
 
       &_role_apply
         padding: 5px 10px
-        color: #fff
+        color: $c-text-light
         background-color: $c-accent-primary
         border: none
 
@@ -611,4 +611,4 @@ $block: ".date-control"
       font-size: 24px
       line-height: 1.2
       text-align: center
-      color: #fff
+      color: $c-text-light
