@@ -34,6 +34,8 @@ $block: ".purple-form-interval"
 
   &_adjust_wrap-xs
 
+  &_adjust_clear
+
 
   // $Common form interval label
   &__label
@@ -46,14 +48,14 @@ $block: ".purple-form-interval"
     font-weight: 600
     line-height: 1
 
-    // $Common form interval label CONTEXT: $Common form interval MOD: role control
+    // $Common form interval label text CONTEXT: $Common form MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
       flex-grow: 0
       flex-shrink: 0
       width: auto
       margin-bottom: 0
-      font-weight: 400
+      font-weight: 600
       white-space: nowrap
 
     #{$block}_role_control &
@@ -62,11 +64,56 @@ $block: ".purple-form-interval"
     #{$block}_role_control-reverse &
       margin-left: 10px
 
-    // $Common form interval label CONTEXT: $Common form interval MOD: required field
+    // $Common form interval label-text CONTEXT: $Common form interval MOD: type required interval
     #{$block}_type_required &
       &:after
         content: '*'
         margin-left: 2px
+
+    @media screen and (max-width: 960px)
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        width: 90px
+
+    // $Common form interval label MOD: adjust control fluid
+    &_adjust_control-fluid
+      width: auto
+      @media screen and (max-width: 960px)
+        #{$block}_role_control &,
+        #{$block}_role_control-reverse &
+          width: auto
+
+    // $Common form interval label MOD: adjust control wrap
+    &_adjust_control-wrap
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        white-space: normal
+
+    // $Common form interval label MOD: size small
+    &_size_s
+      font-size: 12px
+
+    // $Common form interval label MOD: no wrap
+    &_nowrap
+      white-space: nowrap
+
+    &_type_border
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        align-self: stretch
+        width: auto
+        min-height: 50px
+        padding: 15px
+        margin: 0
+        border: 1px solid $c-border-primary
+        border-radius: 2px
+        white-space: nowrap
+
+      #{$block}_role_control &
+        border-right: none
+
+      #{$block}_role_control-reverse &
+        border-left: none
 
 
   // $Common form interval label text
@@ -76,6 +123,15 @@ $block: ".purple-form-interval"
   // $Common form interval label text faded
   &__label-text-faded
     color: $c-text-secondary
+
+
+  // $Common form interval label icon
+  &__label-icon
+    font-family: 'icons'
+    line-height: 1
+    font-weight: 400
+    font-size: inherit
+    color: inherit
 
 
   // $Common form interval range
