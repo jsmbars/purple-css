@@ -119,13 +119,19 @@ $block: ".purple-page-main"
   // $Page main layout
   &__layout
     display: flex
-    flex-direction:
+    flex-direction: row
     justify-content: flex-start
     align-items: flex-start
     width: 100%
 
     @media screen and (max-width: 1120px)
       flex-direction: column
+
+    &:not(:last-child)
+      margin-bottom: 30px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 25px
 
     // $Page main layout MOD: sidebar single
     &_type_sidebar-single
@@ -165,6 +171,10 @@ $block: ".purple-page-main"
   &__layout-content
     #{$block}__layout_type_sidebar-single &
       width: calc(100% - 400px)
+
+    // Fix nested image aspect ratio issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      min-height: 1px
 
     @media screen and (max-width: 1120px)
       #{$block}__layout_type_sidebar-single &
