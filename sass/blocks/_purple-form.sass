@@ -29,11 +29,17 @@ $block: ".purple-form"
     @media screen and (max-width: 960px)
       line-height: 1
 
+    &:not(:last-child)
+      margin-bottom: 20px
+
     &_adjust_row
       line-height: 50px
 
       @media screen and (max-width: 960px)
         line-height: 1
+
+      &:not(:last-child)
+        margin-bottom: 0
 
 
   // $Common form row
@@ -103,6 +109,13 @@ $block: ".purple-form"
       @media screen and (max-width: 400px)
         flex-direction: column
 
+    // $Common form row MOD: adjust flow
+    &_adjust_flow
+      flex-wrap: wrap
+
+      @media screen and (max-width: 960px)
+        flex-direction: row
+
 
   // $Common form group
   // $Common form field
@@ -130,7 +143,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           flex-grow: 0
           flex-shrink: 1
           width: 50%
@@ -167,7 +181,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           flex-grow: 0
           flex-shrink: 1
           width: 33%
@@ -204,7 +219,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           flex-grow: 0
           flex-shrink: 1
           width: 33%
@@ -241,7 +257,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           flex-grow: 0
           flex-shrink: 1
           width: 20%
@@ -278,7 +295,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           flex-grow: 0
           flex-shrink: 1
           width: 16.6%
@@ -313,7 +331,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           width: auto
 
       @media screen and (max-width: 640px)
@@ -342,7 +361,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           flex-grow: 0
           flex-shrink: 1
           width: auto
@@ -375,6 +395,9 @@ $block: ".purple-form"
       margin-right: 30px
       margin-bottom: 0
 
+      #{$block}__row_adjust_flow &
+        margin-bottom: 20px
+
       @media screen and (max-width: 960px)
         margin-right: 0
         margin-bottom: 30px
@@ -385,6 +408,10 @@ $block: ".purple-form"
         #{$block}__row_adjust_wrap-xs &
           margin-right: 30px
           margin-bottom: 0
+
+        #{$block}__row_adjust_flow &
+          margin-right: 30px
+          margin-bottom: 20px
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major &
@@ -422,7 +449,8 @@ $block: ".purple-form"
         #{$block}__row_adjust_no-wrap &,
         #{$block}__row_adjust_wrap-s-major &,
         #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs &,
+        #{$block}__row_adjust_flow &
           margin-right: 0
           margin-bottom: 0
 
