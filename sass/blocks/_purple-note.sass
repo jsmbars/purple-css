@@ -19,6 +19,9 @@ $block: ".purple-note"
   padding: 15px
   background-color: $c-gray-medium
 
+  &_adjust_action
+    padding-right: 45px
+
   // $Note MOD: color accent blue
   &_color_accent-blue
     background-color: $c-accent-blue
@@ -26,6 +29,10 @@ $block: ".purple-note"
   // $Note MOD: color accent red
   &_color_accent-red
     background-color: $c-accent-red
+
+  // $Note MOD: color accent orange
+  &_color_accent-orange
+    background-color: $c-accent-orange
 
   // $Note MOD: color accent yellow
   &_color_accent-yellow
@@ -45,7 +52,8 @@ $block: ".purple-note"
 
   // $Note MOD: icon alert
   &_icon_alert,
-  &_icon_check
+  &_icon_check,
+  &_icon_info
     padding-left: 40px
 
     &:after
@@ -63,8 +71,15 @@ $block: ".purple-note"
       color: $c-text-light
       text-align: left
 
+  &_icon_alert#{&}_color_accent-yellow,
+  &_icon_check#{&}_color_accent-yellow,
+  &_icon_info#{&}_color_accent-yellow
+    &:after
+      color: $c-text-primary
+
   &_icon_alert-circle,
-  &_icon_check-circle
+  &_icon_check-circle,
+  &_icon_info-circle
     padding-left: 60px
 
     &:before
@@ -107,6 +122,12 @@ $block: ".purple-note"
       content: "\e90d"
       font-size: 18px
 
+  &_icon_info,
+  &_icon_info-circle
+    &:after
+      content: "\e92f"
+      font-size: 18px
+
 
   // $Note MOD: position above
   &_position_above
@@ -116,12 +137,18 @@ $block: ".purple-note"
   &_position_below
     margin-top: 30px
 
-  &_fixed_top
+  &_fixed_top,
+  &_fixed_bottom
     position: fixed
-    top: 0
     left: 0
     right: 0
     z-index: 10004
+
+  &_fixed_top
+    top: 0
+
+  &_fixed_bottom
+    bottom: 0
 
 
   // $Note text
@@ -133,10 +160,16 @@ $block: ".purple-note"
     font-weight: 400
     color: $c-text-light
 
+    #{$block}_color_accent-yellow &
+      color: $c-text-primary
+
+    & ~ &
+      margin-top: 5px
+
 
   // $Note text bold
   &__text-bold
-    font-weight: 600
+    font-weight: 800
 
 
   // $Note text light
@@ -145,8 +178,17 @@ $block: ".purple-note"
 
 
   // $Note text line
-  &__line
+  &__text-line
     display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    &_pointer_dash
+      &:before
+        content: "\2013"
+        display: inline-block
+        margin-right: 5px
 
 
   // $Note text link
