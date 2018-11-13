@@ -42,6 +42,9 @@ $block: ".purple-indicator"
   // $Indicator MOD: color red
   &_color_accent-red
 
+  // $Indicator MOD: color orange
+  &_color_accent-orange
+
   // $Indicator MOD: color yellow
   &_color_accent-yellow
 
@@ -82,6 +85,10 @@ $block: ".purple-indicator"
     #{$block}_color_accent-red &
       background-color: $c-accent-red
 
+    // $Indicator marker CONTEXT: $Indicator MOD: color orange
+    #{$block}_color_accent-orange &
+      background-color: $c-accent-orange
+
     // $Indicator marker CONTEXT: $Indicator MOD: color yellow
     #{$block}_color_accent-yellow &
       background-color: $c-accent-yellow
@@ -101,6 +108,11 @@ $block: ".purple-indicator"
     // $Indicator marker CONTEXT: $Indicator MOD: color gray
     #{$block}_color_gray &
       background-color: $c-gray-medium
+
+    #{$block}_adjust_select &
+      width: 12px
+      height: 12px
+      line-height: 12px
 
     // $Indicator marker MOD: icon check
     // $Indicator marker MOD: icon hourglass
@@ -143,6 +155,10 @@ $block: ".purple-indicator"
     #{$block}_color_accent-red &
       color: $c-accent-red
 
+    // $Indicator label CONTEXT: $Indicator MOD: color orange
+    #{$block}_color_accent-orange &
+      color: $c-accent-orange
+
     // $Indicator label CONTEXT: $Indicator MOD: color yellow
     #{$block}_color_accent-yellow &
       color: $c-accent-yellow
@@ -172,6 +188,12 @@ $block: ".purple-indicator"
       @media screen and (max-width: 640px)
         font-size: inherit
         line-height: inherit
+
+    #{$block}_adjust_select &
+      font-size: 14px
+      line-height: 1.2
+      font-weight: 400
+      color: $c-text-primary
 
 
   // $Indicator label after marker

@@ -268,7 +268,7 @@ $block: ".purple-form-select"
       opacity: 1
 
 
-  // React-select adjusments
+  // React-select v1 adjusments
   & .Select-color-indicator
     display: inline-block
     margin-right: 5px
@@ -359,6 +359,7 @@ $block: ".purple-form-select"
     color: $c-text-primary
 
     &_color_accent-red,
+    &_color_accent-orange,
     &_color_accent-yellow,
     &_color_accent-green,
     &_color_accent-blue,
@@ -369,6 +370,9 @@ $block: ".purple-form-select"
 
     &_color_accent-red
       background-color: $c-accent-red
+
+    &_color_accent-orange
+      background-color: $c-accent-orange
 
     &_color_accent-yellow
       background-color: $c-accent-yellow
@@ -390,6 +394,9 @@ $block: ".purple-form-select"
 
     &_color_accent-red-medium
       background-color: $c-accent-red-medium
+
+    &_color_accent-orange-medium
+      background-color: $c-accent-orange-medium
 
     &_color_accent-yellow-medium
       background-color: $c-accent-yellow-medium
@@ -467,20 +474,21 @@ $block: ".purple-form-select"
       border-color: $c-accent-red
 
   &_state_inactive
-    position: relative
+    & .Select-control
+      position: relative
 
-    &:after
-      content: ""
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      z-index: 10
-      display: block
-      width: 100%
-      height: 100%
-      background-color: rgba(20,20,20,.2)
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: 10
+        display: block
+        width: 100%
+        height: 100%
+        background-color: rgba(20,20,20,.2)
 
   &_icon_time
     & .Select-arrow
@@ -596,3 +604,205 @@ $block: ".purple-form-select"
         line-height: 1
         height: 30px
         padding: 0
+
+
+  // React-select v2 adjusments
+  & .react-select--is-disabled
+    pointer-events: none
+    position: relative
+    box-sizing: border-box
+
+  & .react-select__control
+    min-height: 50px
+    border-radius: 2px
+    border-color: $c-border-primary
+
+  & .react-select__control:hover
+    border-color: $c-border-primary
+
+  & .react-select__control--is-focused
+    box-shadow: 0 0 3px -1px $c-accent-blue
+
+  & .react-select__control--is-focused:hover
+    border-color: $c-border-primary
+
+  & .react-select__control--is-disabled
+    background-color: $c-gray-ultra-light
+    border-color: $c-gray-extra-light
+
+  & .react-select__value-container
+    padding: 5px 10px
+
+  & .react-select__value-container--is-multi
+
+  & .react-select__placeholder
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    color: $c-text-faded
+
+  & .react-select__single-value
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    color: $c-text-primary
+
+  & .react-select__single-value--is-disabled
+    color: $c-text-secondary
+
+  & .react-select__multi-value
+    margin-right: 10px
+    margin-bottom: 5px
+
+    background-color: $c-accent-primary-medium
+    border-radius: 5px
+    line-height: 1
+    color: $c-text-primary
+
+    &--color-accent-red,
+    &--color-accent-orange,
+    &--color-accent-yellow,
+    &--color-accent-green,
+    &--color-accent-blue,
+    &--color-accent-purple,
+    &--color-accent-pink,
+    &--color-gray-medium
+      color: $c-text-light
+
+    &--color-accent-red
+      background-color: $c-accent-red
+
+    &--color-accent-orange
+      background-color: $c-accent-orange
+
+    &--color-accent-yellow
+      background-color: $c-accent-yellow
+
+    &--color-accent-green
+      background-color: $c-accent-green
+
+    &--color-accent-blue
+      background-color: $c-accent-blue
+
+    &--color-accent-purple
+      background-color: $c-accent-purple
+
+    &--color-accent-pink
+      background-color: $c-accent-pink
+
+    &--color-gray
+      background-color: $c-gray-medium
+
+    &--color-accent-red-medium
+      background-color: $c-accent-red-medium
+
+    &--color-accent-orange-medium
+      background-color: $c-accent-orange-medium
+
+    &--color-accent-yellow-medium
+      background-color: $c-accent-yellow-medium
+
+    &--color-accent-green-medium
+      background-color: $c-accent-green-medium
+
+    &--color-accent-blue-medium
+      background-color: $c-accent-blue-medium
+
+    &--color-accent-purple-medium
+      background-color: $c-accent-purple-medium
+
+    &--color-accent-pink-medium
+      background-color: $c-accent-pink-medium
+
+    &--color-gray-light
+      background-color: $c-gray-extra-light
+
+  & .react-select__multi-value__label
+    text-transform: uppercase
+    color: inherit
+    padding: 6px 10px
+    font-size: 12px
+
+    @media screen and (max-width: 480px)
+      font-size: 11px
+      padding-left: 5px
+      padding-right: 5px
+
+  & .react-select__multi-value__remove
+    padding-left: 5px
+    padding-right: 5px
+    background-color: rgba(0,0,0,.3)
+    border-right: 0
+    border-top-right-radius: 5px
+    border-bottom-right-radius: 5px
+    cursor: pointer
+
+  & .react-select__multi-value__remove:hover
+    background-color: rgba(0,0,0,.6)
+
+  & .react-select__multi-value__remove svg
+    color: #fff
+
+  & .react-select__clear-indicator,
+  & .react-select__dropdown-indicator
+    cursor: pointer
+
+  & .react-select__clear-indicator,
+  & .react-select__dropdown-indicator,
+  & .react-select__loading-indicator span:nth-child(1),
+  & .react-select__loading-indicator span:nth-child(2),
+  & .react-select__loading-indicator span:nth-child(3)
+    color: $c-gray-extra-light
+
+  & .react-select__clear-indicator:hover
+    color: $c-gray-medium
+
+  & .react-select__control--is-focused .react-select__clear-indicator,
+  & .react-select__control--is-focused .react-select__dropdown-indicator,
+  & .react-select__control--is-focused .react-select__loading-indicator,
+  & .react-select__control--is-focused .react-select__loading-indicator span
+    color: $c-gray-dark
+
+  & .react-select__indicator-separator
+    background-color: $c-gray-extra-light
+
+  & .react-select__menu
+    margin-top: -1px
+    margin-bottom: 0
+    border-radius: 0
+    box-shadow: none
+    border: 1px solid $c-border-primary
+
+  & .react-select__option
+    font-family: $f-sans
+    font-size: 14px
+    color: $c-text-primary
+
+  & .react-select__option--is-selected
+    background-color: $c-accent-primary-medium
+
+  & .react-select__option--is-focused
+    background-color: $c-accent-primary-light
+
+  &_state_error
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      border-color: $c-accent-red
+
+  &_state_inactive
+    & .react-select,
+    & .react-select--is-disabled
+      pointer-events: none
+      position: relative
+      box-sizing: border-box
+
+    & .react-select__control,
+    & .react-select__control--is-disabled
+      background-color: $c-gray-ultra-light
+      border-color: $c-gray-extra-light
+
+    & .react-select__single-value,
+    & .react-select__single-value--is-disabled
+      color: $c-text-secondary
