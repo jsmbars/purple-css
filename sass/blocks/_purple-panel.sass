@@ -113,6 +113,8 @@ $block: ".purple-panel"
 
   &_page_users-index
 
+  &_page_counting-history
+
 
   // $Panel header
   &__header
@@ -124,6 +126,10 @@ $block: ".purple-panel"
     width: 100%
     padding: 20px
     border-bottom: 1px solid $c-border-primary
+
+    #{$block}_page_counting-history &
+      @media screen and (max-width: 400px)
+        flex-wrap: wrap
 
     #{$block}_role_manager &
       border-color: $c-border-secondary
@@ -212,6 +218,11 @@ $block: ".purple-panel"
   &__header-actions
     flex-grow: 0
     flex-shrink: 0
+
+    #{$block}_page_counting-history &
+      @media screen and (max-width: 400px)
+        flex-grow: 1
+        margin-top: 15px
 
 
   // $Panel header action
