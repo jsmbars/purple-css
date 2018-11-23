@@ -53,7 +53,8 @@ $block: ".purple-note"
   // $Note MOD: icon alert
   &_icon_alert,
   &_icon_check,
-  &_icon_info
+  &_icon_info,
+  &_icon_lock
     padding-left: 40px
 
     &:after
@@ -79,7 +80,8 @@ $block: ".purple-note"
 
   &_icon_alert-circle,
   &_icon_check-circle,
-  &_icon_info-circle
+  &_icon_info-circle,
+  &_icon_lock-circle
     padding-left: 60px
 
     &:before
@@ -127,6 +129,12 @@ $block: ".purple-note"
     &:after
       content: "\e92f"
       font-size: 18px
+
+  &_icon_lock,
+  &_icon_lock-circle
+    &:after
+      content: "\e930"
+      font-size: 16px
 
 
   // $Note MOD: position above
