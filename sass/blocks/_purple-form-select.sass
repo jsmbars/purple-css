@@ -39,6 +39,8 @@ $block: ".purple-form-select"
 
   &_adjust_clear
 
+  &_adjust_dashboard
+
 
   // $Common form select label
   &__label
@@ -226,6 +228,9 @@ $block: ".purple-form-select"
   &__component
     display: block
     width: 100%
+
+    #{$block}_adjust_dashboard &
+      min-width: 200px
 
 
   // $Common form select note
@@ -752,10 +757,11 @@ $block: ".purple-form-select"
   & .react-select__loading-indicator span:nth-child(1),
   & .react-select__loading-indicator span:nth-child(2),
   & .react-select__loading-indicator span:nth-child(3)
-    color: $c-gray-extra-light
-
-  & .react-select__clear-indicator:hover
     color: $c-gray-medium
+
+  & .react-select__clear-indicator:hover,
+  & .react-select__dropdown-indicator:hover
+    color: $c-gray-dark
 
   & .react-select__control--is-focused .react-select__clear-indicator,
   & .react-select__control--is-focused .react-select__dropdown-indicator,
