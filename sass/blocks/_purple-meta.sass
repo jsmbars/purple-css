@@ -44,26 +44,29 @@ $block: ".purple-meta"
     color: inherit
     vertical-align: baseline
 
-  // $Meta text MOD: type faded
+  // $Meta MOD: type faded
   &_type_faded
     color: $c-text-secondary
 
-  // $Meta text MOD: type bold
+  // $Meta MOD: type bold
   &_type_bold
     font-weight: 600
 
-  // $Meta text MOD: type light
+  // $Meta MOD: type light
   &_type_light
     font-weight: 300
 
+  // $Meta MOD: icon date
   &_icon_date
     &:before
       content: '\e900'
 
+  // $Meta MOD: icon user
   &_icon_user
     &:before
       content: '\e904'
 
+  // $Meta MOD: icon venue
   &_icon_venue
     &:before
       content: '\e901'
@@ -80,12 +83,14 @@ $block: ".purple-meta"
   &_size_xxl
     font-size: 20px
 
+  // $Meta MOD: adjust wrap
   &_adjust_wrap
     overflow-wrap: break-word
     word-wrap: break-word
     word-break: break-word
     hyphens: auto
 
+  // $Meta MOD: adjustaction
   &_adjust_action
     cursor: pointer
     text-decoration: underline
@@ -94,7 +99,7 @@ $block: ".purple-meta"
       text-decoration: none
 
 
-  // $Page dashboard meta text
+  // $Meta text
   &__text
     margin: 0
     padding: 0
