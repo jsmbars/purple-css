@@ -38,6 +38,10 @@ $block: ".purple-table"
 
   &_page_users-index
 
+  &_page_counting-totals
+
+  &_page_counting-bundle-check
+
 
   &__sorting
     position: absolute
@@ -91,7 +95,7 @@ $block: ".purple-table"
 
     &:nth-child(odd)
       #{$block}_type_common &
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
 
     // $Common table group MOD: highlight red medium
     &_highlight_accent-red-medium
@@ -173,7 +177,7 @@ $block: ".purple-table"
 
     &:nth-child(odd)
       #{$block}_type_common &
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
 
     &:not(:last-child)
       border-bottom: 1px solid $c-border-primary
@@ -303,6 +307,23 @@ $block: ".purple-table"
       #{$block}_page_users-index &
         width: 20%
 
+      #{$block}_page_counting-totals &
+        flex-grow: 0
+        flex-shrink: 0
+        justify-content: center
+        width: 150px
+        padding: 0
+
+      #{$block}_page_counting-bundle-check &
+        width: calc(100% - 100px)
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_counting-totals &
+          width: 130px
+
+        #{$block}_page_counting-bundle-check &
+          width: calc(100% - 80px)
+
     // $Common table cell second column
     &:nth-child(2)
       #{$block}_page_invites-index &
@@ -310,6 +331,20 @@ $block: ".purple-table"
 
       #{$block}_page_users-index &
         width: 30%
+
+      #{$block}_page_counting-totals &
+        width: 25%
+        padding: 0
+
+      #{$block}_page_counting-bundle-check &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100px
+
+      @media screen and (max-width: 960px)
+
+        #{$block}_page_counting-bundle-check &
+          width: 80px
 
     // $Common table cell third column
     &:nth-child(3)
@@ -319,6 +354,10 @@ $block: ".purple-table"
       #{$block}_page_users-index &
         width: 18%
 
+      #{$block}_page_counting-totals &
+        width: 25%
+        padding: 0
+
     // $Common table cell fourth column
     &:nth-child(4)
       #{$block}_page_invites-index &
@@ -326,6 +365,10 @@ $block: ".purple-table"
 
       #{$block}_page_users-index &
         width: 18%
+
+      #{$block}_page_counting-totals &
+        width: 25%
+        padding: 0
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -367,8 +410,20 @@ $block: ".purple-table"
 
     &_role_header
       #{$block}_page_invites-index &,
-      #{$block}_page_users-index &
+      #{$block}_page_users-index &,
+      #{$block}_page_counting-totals &,
+      #{$block}_page_counting-bundle-check &
         text-align: center
+
+      #{$block}_page_counting-totals &,
+      #{$block}_page_counting-bundle-check &
+        font-size: 16px
+        font-weight: 600
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_counting-totals &,
+        #{$block}_page_counting-bundle-check &
+          font-size: 14px
 
     &_type_no-border
       &:not(:last-child)
@@ -470,8 +525,20 @@ $block: ".purple-table"
     #{$block}_page_invites-index #{$block}__cell:nth-child(4) &,
     #{$block}_page_invites-index #{$block}__cell:nth-child(6) &,
     #{$block}_page_users-index #{$block}__cell:nth-child(3) &,
-    #{$block}_page_users-index #{$block}__cell:nth-child(4) &
+    #{$block}_page_users-index #{$block}__cell:nth-child(4) &,
+    #{$block}_page_counting-totals &,
+    #{$block}_page_counting-bundle-check #{$block}__cell:nth-child(1) &
       text-align: center
+
+    #{$block}_page_counting-totals #{$block}__cell:nth-child(1) &,
+    #{$block}_page_counting-bundle-check #{$block}__cell:nth-child(2) &
+      font-size: 16px
+      font-weight: 600
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_counting-totals #{$block}__cell:nth-child(1) &,
+      #{$block}_page_counting-bundle-check #{$block}__cell:nth-child(2) &
+        font-size: 14px
 
     &:before
       display: inline-block
@@ -532,6 +599,10 @@ $block: ".purple-table"
 
   &__text-nowrap
     white-space: nowrap
+
+
+  &__text-faded
+    color: $c-text-secondary
 
 
   &__text-bold

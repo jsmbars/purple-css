@@ -499,12 +499,18 @@ $block: ".purple-form"
     justify-content: flex-start
     align-items: center
 
+    &_justify_center
+      justify-content: center
+
 
   // $Common form action
   &__action
     display: block
     flex-grow: 0
     flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 20px
 
     // $Common form action MOD: state hidden
     &_state_hidden

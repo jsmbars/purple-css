@@ -41,6 +41,22 @@ $block: ".purple-form-select"
 
   &_adjust_dashboard
 
+  &_highlight_accent-red-light
+
+  &_highlight_accent-orange-light
+
+  &_highlight_accent-yellow-light
+
+  &_highlight_accent-green-light
+
+  &_highlight_accent-blue-light
+
+  &_highlight_accent-purple-light
+
+  &_highlight_accent-pink-light
+
+  &_highlight_gray-light
+
 
   // $Common form select label
   &__label
@@ -52,6 +68,7 @@ $block: ".purple-form-select"
     color: $c-text-primary
     font-weight: 600
     line-height: 1
+    text-align: left
 
     // $Common form select label text CONTEXT: $Common form select MOD: role control
     #{$block}_role_control &,
@@ -97,6 +114,10 @@ $block: ".purple-form-select"
     // $Common form select label MOD: size small
     &_size_s
       font-size: 12px
+
+    // $Common form select label MOD: size large
+    &_size_l
+      font-size: 16px
 
     // $Common form select label MOD: no wrap
     &_adjust_no-wrap
@@ -188,6 +209,38 @@ $block: ".purple-form-select"
       -webkit-appearance: none
       transition: all .3s
 
+      #{$block}_highlight_accent-red-light &
+        background-color: $c-accent-red-light
+        border-color: $c-accent-red
+
+      #{$block}_highlight_accent-orange-light &
+        background-color: $c-accent-orange-light
+        border-color: $c-accent-orange
+
+      #{$block}_highlight_accent-yellow-light &
+        background-color: $c-accent-yellow-light
+        border-color: $c-accent-yellow
+
+      #{$block}_highlight_accent-green-light &
+        background-color: $c-accent-green-light
+        border-color: $c-accent-green
+
+      #{$block}_highlight_accent-blue-light &
+        background-color: $c-accent-blue-light
+        border-color: $c-accent-blue
+
+      #{$block}_highlight_accent-purple-light &
+        background-color: $c-accent-purple-light
+        border-color: $c-accent-purple
+
+      #{$block}_highlight_accent-pink-light &
+        background-color: $c-accent-pink-light
+        border-color: $c-accent-pink
+
+      #{$block}_highlight_gray-light &
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
       #{$block}_state_error &
         border-color: $c-accent-red
         color: $c-accent-red
@@ -207,7 +260,7 @@ $block: ".purple-form-select"
         color: $c-text-primary
 
       &:disabled
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
         cursor: not-allowed
 
     // $Common form select option
@@ -222,6 +275,58 @@ $block: ".purple-form-select"
       line-height: 1.5
       outline: none
       border: none
+
+
+  // $Common form select box
+  &__box
+    width: 100%
+    min-height: 50px
+    padding: 13px 10px
+    font-family: $f-sans
+    font-size: 14px
+    color: $c-text-primary
+    font-weight: 400
+    line-height: 1.5
+    background-color: $c-bg-light
+    border: 1px solid $c-border-primary
+    border-radius: 2px
+    cursor: default
+
+    #{$block}_highlight_accent-red-light &
+      background-color: $c-accent-red-light
+      border-color: $c-accent-red
+
+    #{$block}_highlight_accent-orange-light &
+      background-color: $c-accent-orange-light
+      border-color: $c-accent-orange
+
+    #{$block}_highlight_accent-yellow-light &
+      background-color: $c-accent-yellow-light
+      border-color: $c-accent-yellow
+
+    #{$block}_highlight_accent-green-light &
+      background-color: $c-accent-green-light
+      border-color: $c-accent-green
+
+    #{$block}_highlight_accent-blue-light &
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+
+    #{$block}_highlight_accent-purple-light &
+      background-color: $c-accent-purple-light
+      border-color: $c-accent-purple
+
+    #{$block}_highlight_accent-pink-light &
+      background-color: $c-accent-pink-light
+      border-color: $c-accent-pink
+
+    #{$block}_highlight_gray-light &
+      background-color: $c-gray-ultra-light
+      border-color: $c-border-primary
+
+    #{$block}_state_error &
+      border-color: $c-accent-red
+      color: $c-accent-red
 
 
   // $Common form select react select component wrap
@@ -472,6 +577,54 @@ $block: ".purple-form-select"
     border-color: $c-border-primary
     margin-top: 0
     border-top: none
+
+  &_highlight_accent-red-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-red-light
+      border-color: $c-accent-red
+
+  &_highlight_accent-orange-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-orange-light
+      border-color: $c-accent-orange
+
+  &_highlight_accent-yellow-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-yellow-light
+      border-color: $c-accent-yellow
+
+  &_highlight_accent-green-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-green-light
+      border-color: $c-accent-green
+
+  &_highlight_accent-blue-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+
+  &_highlight_accent-purple-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-purple-light
+      border-color: $c-accent-purple
+
+  &_highlight_accent-pink-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-accent-pink-light
+      border-color: $c-accent-pink
+
+  &_highlight_gray-light
+    & .Select-control,
+    & .Select-menu-outer
+      background-color: $c-gray-ultra-light
+      border-color: $c-border-primary
 
   &_state_error
     & .Select-control,
@@ -789,6 +942,70 @@ $block: ".purple-form-select"
 
   & .react-select__option--is-focused
     background-color: $c-accent-primary-light
+
+  &_highlight_accent-red-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-red-light
+      border-color: $c-accent-red
+
+  &_highlight_accent-orange-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-orange-light
+      border-color: $c-accent-orange
+
+  &_highlight_accent-yellow-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-yellow-light
+      border-color: $c-accent-yellow
+
+  &_highlight_accent-green-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-green-light
+      border-color: $c-accent-green
+
+  &_highlight_accent-blue-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+
+  &_highlight_accent-purple-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-purple-light
+      border-color: $c-accent-purple
+
+  &_highlight_accent-pink-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-accent-pink-light
+      border-color: $c-accent-pink
+
+  &_highlight_gray-light
+    & .react-select__control,
+    & .react-select__control:hover,
+    & .react-select__control--is-focused,
+    & .react-select__menu
+      background-color: $c-gray-ultra-light
+      border-color: $c-border-primary
 
   &_state_error
     & .react-select__control,

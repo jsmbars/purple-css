@@ -37,6 +37,7 @@ $block: ".purple-form-textarea"
     color: $c-text-primary
     font-weight: 600
     line-height: 1
+    text-align: left
 
     // $Common form textarea label-text CONTEXT: $Common form textarea MOD: type required field
     #{$block}_type_required &
@@ -86,11 +87,11 @@ $block: ".purple-form-textarea"
         box-shadow: 0 0 3px -1px $c-accent-blue
 
       &:disabled
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
         cursor: not-allowed
 
       &:read-only
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
 
       &::-webkit-input-placeholder
         color: $c-text-faded !important

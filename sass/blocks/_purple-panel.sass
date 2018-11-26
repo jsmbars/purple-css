@@ -117,6 +117,10 @@ $block: ".purple-panel"
 
   &_page_counting-history
 
+  &_page_counting-totals
+
+  &_page_counting-bundle-check
+
 
   // $Panel header
   &__header
@@ -245,6 +249,17 @@ $block: ".purple-panel"
     &_state_closed
       display: none
 
+
+  // $Panel inner
+  &__inner
+    display: block
+    width: 100%
+    padding: 20px 20px 30px
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
+
   // $Panel content
   &__content
     display: block
@@ -303,6 +318,15 @@ $block: ".purple-panel"
 
     @media screen and (max-width: 960px)
       padding: 15px
+
+
+  // $Panel group line
+  &__group-line
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
 
   // $Panel row
   &__row
@@ -543,8 +567,15 @@ $block: ".purple-panel"
     font-weight: 600
 
     #{$block}_page_invites-index &,
-    #{$block}_page_users-index &
+    #{$block}_page_users-index &,
+    #{$block}_page_counting-totals &,
+    #{$block}_page_counting-bundle-check &
       text-align: center
+
+    #{$block}_page_counting-totals &,
+    #{$block}_page_counting-bundle-check &
+      margin-top: 10px
+      margin-bottom: 20px
 
     &:before
       margin-right: 10px
