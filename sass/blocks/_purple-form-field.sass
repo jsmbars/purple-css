@@ -86,6 +86,12 @@ $block: ".purple-form-field"
     line-height: 1
     text-align: left
 
+    #{$block}_justify_center &
+      text-align: center
+
+    #{$block}_justify_end &
+      text-align: right
+
     // $Common form field label text CONTEXT: $Common form MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
@@ -141,6 +147,10 @@ $block: ".purple-form-field"
 
       @media screen and (max-width: 960px)
         font-size: 14px
+
+    // $Common form field label MOD: size extra large
+    &_size_xl
+      font-size: 18px
 
     // $Common form field label MOD: no wrap
     &_adjust_no-wrap
@@ -442,6 +452,39 @@ $block: ".purple-form-field"
 
     #{$block}_state_error &
       border-color: $c-accent-red
+      color: $c-accent-red
+
+
+  // $Common form field value
+  &__value
+    width: 100%
+    font-family: $f-sans
+    font-size: 18px
+    color: $c-text-primary
+    font-weight: 600
+    line-height: 1.5
+    background-color: $c-bg-light
+    cursor: default
+
+    #{$block}_adjust_table-cell &
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-items: center
+      width: 100%
+      height: 100%
+      padding: 10px
+      border: none
+
+    #{$block}_justify_center &
+      justify-content: center
+      text-align: center
+
+    #{$block}_justify_end &
+      justify-content: flex-end
+      text-align: right
+
+    #{$block}_state_error &
       color: $c-accent-red
 
 
