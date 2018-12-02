@@ -326,7 +326,6 @@ $block: ".purple-form-field"
         #{$block}_adjust_table-cell &
           box-shadow: inset 0 0 3px 0 $c-accent-blue
 
-
       &:disabled
         background-color: $c-gray-ultra-light
         cursor: not-allowed
@@ -382,6 +381,24 @@ $block: ".purple-form-field"
 
         #{$block}_state_error &
           color: $c-accent-red !important
+
+    &_size_s
+      & input
+        padding-top: 14px
+        padding-bottom: 14px
+        font-size: 12px
+
+    &_size_l
+      & input
+        padding-top: 12px
+        padding-bottom: 12px
+        font-size: 16px
+
+    &_size_xl
+      & input
+        padding-top: 11px
+        padding-bottom: 11px
+        font-size: 18px
 
 
   // $Common form field box
@@ -453,6 +470,21 @@ $block: ".purple-form-field"
     #{$block}_state_error &
       border-color: $c-accent-red
       color: $c-accent-red
+
+    &_size_s
+      padding-top: 14px
+      padding-bottom: 14px
+      font-size: 12px
+
+    &_size_l
+      padding-top: 12px
+      padding-bottom: 12px
+      font-size: 16px
+
+    &_size_xl
+      padding-top: 11px
+      padding-bottom: 11px
+      font-size: 18px
 
 
   // $Common form field value

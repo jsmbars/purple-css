@@ -290,6 +290,24 @@ $block: ".purple-form-select"
       outline: none
       border: none
 
+    &_size_s
+      & select
+        padding-top: 14px
+        padding-bottom: 14px
+        font-size: 12px
+
+    &_size_l
+      & select
+        padding-top: 12px
+        padding-bottom: 12px
+        font-size: 16px
+
+    &_size_xl
+      & select
+        padding-top: 11px
+        padding-bottom: 11px
+        font-size: 18px
+
 
   // $Common form select box
   &__box
@@ -341,6 +359,21 @@ $block: ".purple-form-select"
     #{$block}_state_error &
       border-color: $c-accent-red
       color: $c-accent-red
+
+    &_size_s
+      padding-top: 14px
+      padding-bottom: 14px
+      font-size: 12px
+
+    &_size_l
+      padding-top: 12px
+      padding-bottom: 12px
+      font-size: 16px
+
+    &_size_xl
+      padding-top: 11px
+      padding-bottom: 11px
+      font-size: 18px
 
 
   // $Common form select value
@@ -839,7 +872,7 @@ $block: ".purple-form-select"
   & .react-select__single-value
     font-family: $f-sans
     font-size: 14px
-    line-height: 1
+    line-height: 1.5
     color: $c-text-primary
 
   & .react-select__single-value--is-disabled
