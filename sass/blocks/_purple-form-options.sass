@@ -47,7 +47,7 @@ $block: ".purple-form-options"
     display: none
 
 
-  // $Common form select label
+  // $Common form options label
   &__label
     display: block
     width: 100%
@@ -57,8 +57,9 @@ $block: ".purple-form-options"
     color: $c-text-primary
     font-weight: 600
     line-height: 1
+    text-align: left
 
-    // $Common form select label text CONTEXT: $Common form select MOD: role control
+    // $Common form options label text CONTEXT: $Common form options MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
       flex-grow: 0
@@ -74,7 +75,7 @@ $block: ".purple-form-options"
     #{$block}_role_control-reverse &
       margin-left: 10px
 
-    // $Common form select label-text CONTEXT: $Common form select MOD: type required field
+    // $Common form options label-text CONTEXT: $Common form options MOD: type required field
     #{$block}_type_required &
       &:after
         content: '*'
@@ -86,29 +87,33 @@ $block: ".purple-form-options"
         width: 90px
         white-space: normal
 
-    // $Common form select label MOD: adjust control fluid
+    // $Common form options label MOD: adjust control fluid
     &_adjust_control-fluid
       @media screen and (max-width: 960px)
         #{$block}_role_control &,
         #{$block}_role_control-reverse &
           width: auto
 
-    // $Common form select label MOD: adjust control wrap
+    // $Common form options label MOD: adjust control wrap
     &_adjust_control-wrap
       #{$block}_role_control &,
       #{$block}_role_control-reverse &
         white-space: normal
 
-    // $Common form select label MOD: size small
+    // $Common form options label MOD: size small
     &_size_s
       font-size: 12px
 
-    // $Common form select label MOD: no wrap
+    // $Common form options label MOD: size large
+    &_size_l
+      font-size: 16px
+
+    // $Common form options label MOD: no wrap
     &_adjust_no-wrap
       white-space: nowrap
 
 
-  // $Common form select label text
+  // $Common form options label text
   &__label-text
 
 
@@ -117,7 +122,7 @@ $block: ".purple-form-options"
     color: $c-text-secondary
 
 
-  // $Common form select control
+  // $Common form options control
   &__control
     display: flex
     flex-direction: row

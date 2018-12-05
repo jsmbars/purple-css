@@ -113,6 +113,14 @@ $block: ".purple-panel"
 
   &_page_users-index
 
+  &_page_user-profile-history
+
+  &_page_counting-history
+
+  &_page_counting-totals
+
+  &_page_counting-bundle-check
+
 
   // $Panel header
   &__header
@@ -124,6 +132,10 @@ $block: ".purple-panel"
     width: 100%
     padding: 20px
     border-bottom: 1px solid $c-border-primary
+
+    #{$block}_page_counting-history &
+      @media screen and (max-width: 400px)
+        flex-wrap: wrap
 
     #{$block}_role_manager &
       border-color: $c-border-secondary
@@ -213,6 +225,11 @@ $block: ".purple-panel"
     flex-grow: 0
     flex-shrink: 0
 
+    #{$block}_page_counting-history &
+      @media screen and (max-width: 400px)
+        flex-grow: 1
+        margin-top: 15px
+
 
   // $Panel header action
   &__header-action
@@ -231,6 +248,17 @@ $block: ".purple-panel"
 
     &_state_closed
       display: none
+
+
+  // $Panel inner
+  &__inner
+    display: block
+    width: 100%
+    padding: 20px 20px 30px
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
 
   // $Panel content
   &__content
@@ -290,6 +318,15 @@ $block: ".purple-panel"
 
     @media screen and (max-width: 960px)
       padding: 15px
+
+
+  // $Panel group line
+  &__group-line
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
 
   // $Panel row
   &__row
@@ -530,8 +567,15 @@ $block: ".purple-panel"
     font-weight: 600
 
     #{$block}_page_invites-index &,
-    #{$block}_page_users-index &
+    #{$block}_page_users-index &,
+    #{$block}_page_counting-totals &,
+    #{$block}_page_counting-bundle-check &
       text-align: center
+
+    #{$block}_page_counting-totals &,
+    #{$block}_page_counting-bundle-check &
+      margin-top: 10px
+      margin-bottom: 20px
 
     &:before
       margin-right: 10px

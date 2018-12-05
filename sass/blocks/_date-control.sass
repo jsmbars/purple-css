@@ -72,18 +72,12 @@ $block: ".date-control"
     border-radius: 0
 
   & .DateInput
-    min-width: 120px
-    width: 120px
+    min-width: 110px
+    width: 110px
     min-height: 50px
-    padding: 12px 20px
+    padding: 12px 15px
     background-color: transparent
     overflow: hidden
-
-    @media screen and (max-width: 480px)
-      min-width: 110px
-      width: 110px
-      padding-right: 15px
-      padding-left: 15px
 
   & .DateInput_input
     position: absolute
@@ -93,7 +87,7 @@ $block: ".date-control"
     height: 100%
     width: 100%
     margin: 0
-    padding: 5px 20px
+    padding: 5px 15px
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
@@ -102,10 +96,6 @@ $block: ".date-control"
     background-color: transparent
     border-color: transparent
     box-shadow: none
-
-    @media screen and (max-width: 480px)
-      padding-right: 15px
-      padding-left: 15px
 
   & .SingleDatePickerInput
     & .DateInput
@@ -210,8 +200,50 @@ $block: ".date-control"
     @media screen and (max-width: 480px)
       padding-top: 25px
 
+  &_type_icon .DateRangePicker
+    & .DateRangePickerInput
+        padding-left: 25px
+
+        @media screen and (max-width: 480px)
+          padding-left: 20px
+
+        @media screen and (max-width: 400px)
+          padding-left: 0
+
+        &:after
+          content: "\e900"
+          position: absolute
+          top: 50%
+          left: 20px
+          display: block
+          width: 14px
+          height: 14px
+          margin-top: -7px
+          font-family: icons
+          font-size: 14px
+          line-height: 1
+          vertical-align: middle
+          color: $c-text-secondary
+
+          @media screen and (max-width: 480px)
+            left: 15px
+
+          @media screen and (max-width: 400px)
+            display: none
+
+
   // $Date range picker MOD: type icon
-  &_type_icon
+  &_type_icon .SingleDatePicker,
+  &_type_icon#{&}_type_interval .DateRangePicker,
+  &_type_icon#{&}_type_interval-fluid .DateRangePicker
+    & .DateRangePickerInput
+        padding-left: 0
+
+        @media screen and (max-width: 480px)
+          padding-left: 0
+
+        &:after
+          display: none
 
     & .DateInput,
     & .DateInput_input
@@ -242,7 +274,8 @@ $block: ".date-control"
         @media screen and (max-width: 480px)
           left: 15px
 
-  &_type_icon#{&}_type_interval-fluid
+
+  &_type_icon#{&}_type_interval-fluid .DateRangePicker
     & .DateInput
       width: auto
 
@@ -250,7 +283,7 @@ $block: ".date-control"
         width: 100%
 
   // $Date range picker MOD: type interval with icon
-  &_type_icon#{&}_type_interval
+  &_type_icon#{&}_type_interval .DateRangePicker
     & .DateInput
       @media screen and (max-width: 400px)
         min-width: 120px
@@ -274,8 +307,8 @@ $block: ".date-control"
 
     & .DateInput
       @media screen and (max-width: 480px)
-        min-width: 90px
-        width: 90px
+        min-width: 100px
+        width: 100px
 
       @media screen and (max-width: 400px)
         min-width: 80px
@@ -312,7 +345,9 @@ $block: ".date-control"
         letter-spacing: -1px
 
   // $Date range picker MOD: adjust third with icon
-  &_adjust_third#{&}_type_icon
+  &_adjust_third#{&}_type_icon .SingleDatePicker,
+  &_adjust_third#{&}_type_icon#{&}_type_interval .DateRangePicker,
+  &_adjust_third#{&}_type_icon#{&}_type_interval-fluid .DateRangePicker
     & .DateInput,
     & .DateInput_input
       @media screen and (min-width: 961px) and (max-width: 1280px)
@@ -404,7 +439,7 @@ $block: ".date-control"
           background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==")
 
 
-      & select::-ms-expand::-ms-expand,
+      & select::-ms-expand,
       & .CalendarMonth_select-control::-ms-expand
         display: none
 
@@ -491,13 +526,13 @@ $block: ".date-control"
         color: $c-text-light
 
 
-    .DateRangePicker_picker,
-    .SingleDatePicker_picker
-      td.CalendarDay__selected_span
-        &:hover
-          background: lighten($c-accent-primary, 8)
-          border: 1px solid lighten($c-accent-primary, 8)
-          color: $c-text-light
+    // .DateRangePicker_picker,
+    // .SingleDatePicker_picker
+    //   td.CalendarDay__selected_span
+    //     &:hover
+    //       background: lighten($c-accent-primary, 8)
+    //       border: 1px solid lighten($c-accent-primary, 8)
+    //       color: $c-text-light
 
     .DayPicker_focusRegion
       border-bottom: 1px solid $c-border-secondary

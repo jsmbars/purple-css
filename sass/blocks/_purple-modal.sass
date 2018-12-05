@@ -93,21 +93,32 @@ $block: ".purple-modal"
     flex-direction: column
     justify-content: flex-start
     align-items: center
-    height: 100%
     max-height: calc(100vh - 200px)
     margin-top: 100px
     margin-bottom: 100px
     overflow: hidden
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      height: calc(100vh - 200px)
 
     @media screen and (max-width: 640px), screen and (max-height: 640px)
       max-height: calc(100vh - 100px)
       margin-top: 50px
       margin-bottom: 50px
 
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), screen and (max-height: 640px)
+      height: calc(100vh - 100px)
+
     @media screen and (max-width: 480px), screen and (max-height: 480px)
       max-height: calc(100vh - 50px)
       margin-top: 25px
       margin-bottom: 25px
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), screen and (max-height: 480px)
+      height: calc(100vh - 50px)
 
 
   // $Modal window close
