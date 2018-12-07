@@ -135,11 +135,13 @@ $block: ".purple-label"
     transition: .4s
 
     &:hover
-      box-shadow: inset 0 0 200px -100px $c-shadow-secondary
+      box-shadow: inset 0 0 200px -50px $c-shadow-secondary
 
 
   // $Common label text
   &__text
+    flex-grow: 1
+    flex-shrink: 1
     display: inline-block
     padding: 10px 25px
     font-family: $f-sans
@@ -188,6 +190,8 @@ $block: ".purple-label"
   // $Common label service area
   &__service
     align-self: stretch
+    flex-grow: 0
+    flex-shrink: 0
     display: flex
     flex-direction: row
     justify-content: center
@@ -203,30 +207,37 @@ $block: ".purple-label"
 
     #{$block}_size_xxl &
       min-width: 55px
+      min-height: 55px
       font-size: 24px
 
     #{$block}_size_xl &
       min-width: 50px
+      min-height: 50px
       font-size: 22px
 
     #{$block}_size_l &
       min-width: 45px
+      min-height: 45px
       font-size: 20px
 
     #{$block}_size_m &
       min-width: 40px
+      min-height: 40px
       font-size: 18px
 
     #{$block}_size_s &
       min-width: 35px
+      min-height: 35px
       font-size: 16px
 
     #{$block}_size_xs &
       min-width: 30px
+      min-height: 30px
       font-size: 16px
 
     #{$block}_size_xxs &
       min-width: 25px
+      min-height: 25px
       font-size: 16px
 
     &_role_action
