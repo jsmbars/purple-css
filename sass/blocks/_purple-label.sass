@@ -59,13 +59,11 @@ $block: ".purple-label"
   +label-common($background-color: $background-color, $color: $color)
 
   position: relative
-  display: inline-block
-  padding: 12px 25px
+  display: inline-flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
   border-radius: 4px
-  font-family: $f-sans
-  font-size: 14px
-  line-height: 1
-  font-weight: 400
   text-decoration: none
   vertical-align: middle
   text-align: left
@@ -73,59 +71,47 @@ $block: ".purple-label"
   border: none
   overflow: hidden
 
-  & + &,
-  &:first-child:not(:only-child)
+  &:not(:only-child)
     margin-bottom: 10px
     margin-right: 10px
 
-  &_type_clearable
-    padding-right: 35px
+  &_space_extra:not(:only-child)
+    margin-bottom: 20px
+    margin-right: 20px
+
+  &:last-child
+    margin-right: 0
 
   &_type_sortable
     cursor: move
 
   // $Common label MOD: size extra large
+  &_size_xxl
+    min-height: 55px
+
+  // $Common label MOD: size extra large
   &_size_xl
-    padding: 17px 35px
-
-  &_size_xl#{&}_type_clearable
-    padding-right: 85px
-
+    min-height: 50px
 
   // $Common label MOD: size large
   &_size_l
-    padding: 15px 30px
-
-  &_size_l#{&}_type_clearable
-    padding-right: 75px
+    min-height: 45px
 
   // $Common label MOD: size medium
   &_size_m
-    padding: 12px 25px
-
-  &_size_m#{&}_type_clearable
-    padding-right: 65px
+    min-height: 40px
 
   // $Common label MOD: size small
   &_size_s
-    padding: 10px 20px
-
-  &_size_s#{&}_type_clearable
-    padding-right: 55px
+    min-height: 35px
 
   // $Common label MOD: size extra small
   &_size_xs
-    padding: 7px 15px
-
-  &_size_xs#{&}_type_clearable
-    padding-right: 45px
+    min-height: 30px
 
   // $Common label MOD: size 2 extra small
   &_size_xxs
-    padding: 5px 10px
-
-  &_size_xxs#{&}_type_clearable
-    padding-right: 35px
+    min-height: 25px
 
   // $Common label MOD: state visible
   &_state_visible
@@ -135,6 +121,7 @@ $block: ".purple-label"
   &_state_hidden
     display: none
 
+  // $Common label MOD: role key
   &_role_key
     padding-left: 0 !important
     padding-right: 10px !important
@@ -142,65 +129,152 @@ $block: ".purple-label"
     color: $c-gray-dark
     background-color: transparent !important
 
+  // $Common label MOD: role action
+  &_role_action
+    cursor: pointer
+    transition: .4s
+
+    &:hover
+      box-shadow: inset 0 0 200px -50px $c-shadow-secondary
+
 
   // $Common label text
   &__text
+    flex-grow: 1
+    flex-shrink: 1
+    display: inline-block
+    padding: 10px 25px
+    font-family: $f-sans
+    font-size: 14px
     line-height: 1
-    vertical-align: middle
-
-
-  &__clear
-    position: absolute
-    top: 0
-    right: 0
-    bottom: 0
-    display: block
-    vertical-align: middle
-    width: 40px
     font-weight: 400
-    font-size: 25px
+    vertical-align: middle
+    white-space: normal
+
+    // $Common label MOD: size extra large
+    #{$block}_size_xxl &
+      padding: 10px 40px
+      font-size: 20px
+
+    // $Common label MOD: size extra large
+    #{$block}_size_xl &
+      padding: 10px 35px
+      font-size: 18px
+
+    // $Common label MOD: size large
+    #{$block}_size_l &
+      padding: 10px 30px
+      font-size: 16px
+
+    // $Common label MOD: size medium
+    #{$block}_size_m &
+      padding: 10px 25px
+      font-size: 14px
+
+    // $Common label MOD: size small
+    #{$block}_size_s &
+      padding: 5px 20px
+      font-size: 14px
+
+    // $Common label MOD: size extra small
+    #{$block}_size_xs &
+      padding: 5px 15px
+      font-size: 14px
+
+    // $Common label MOD: size 2 extra small
+    #{$block}_size_xxs &
+      padding: 5px 10px
+      font-size: 14px
+
+
+  // $Common label service area
+  &__service
+    align-self: stretch
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    min-width: 40px
+    padding-right: 10px
+    padding-left: 10px
+    font-size: 18px
     line-height: 1
     color: $c-text-light
     text-align: center
-    cursor: pointer
     background-color: rgba(0, 0, 0, .3)
-    transition: .4s
+
+    #{$block}_size_xxl &
+      min-width: 55px
+      min-height: 55px
+      font-size: 24px
 
     #{$block}_size_xl &
-      width: 50px
-      font-size: 35px
-      line-height: 50px
+      min-width: 50px
+      min-height: 50px
+      font-size: 22px
 
     #{$block}_size_l &
-      width: 45px
-      font-size: 30px
-      line-height: 45px
+      min-width: 45px
+      min-height: 45px
+      font-size: 20px
 
     #{$block}_size_m &
-      width: 40px
-      font-size: 25px
-      line-height: 40px
+      min-width: 40px
+      min-height: 40px
+      font-size: 18px
 
     #{$block}_size_s &
-      width: 35px
-      font-size: 25px
-      line-height: 35px
+      min-width: 35px
+      min-height: 35px
+      font-size: 16px
 
     #{$block}_size_xs &
-      width: 30px
-      font-size: 20px
-      line-height: 30px
+      min-width: 30px
+      min-height: 30px
+      font-size: 16px
 
     #{$block}_size_xxs &
-      width: 25px
-      font-size: 20px
-      line-height: 25px
+      min-width: 25px
+      min-height: 25px
+      font-size: 16px
 
-    &:before
-      content: "×"
+    &_role_action
+      cursor: pointer
+      transition: .4s
 
-    &:hover
-      background-color: rgba(0, 0, 0, .6)
+      &:hover
+        background-color: rgba(0, 0, 0, .6)
+
+    &_icon_close
+
+      &:before
+        content: "\e909"
+        font-family: icons
+        font-size: 24px
+        line-height: 1
+
+        #{$block}_size_xxl &
+          font-size: 30px
+
+        #{$block}_size_xl &
+          font-size: 28px
+
+        #{$block}_size_l &
+          font-size: 26px
+
+        #{$block}_size_m &
+          font-size: 24px
+
+        #{$block}_size_s &
+          font-size: 22px
+
+        #{$block}_size_xs &
+          font-size: 20px
+
+        #{$block}_size_xxs &
+          font-size: 18px
 
 
   // $Common label variations:
