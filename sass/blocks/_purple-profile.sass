@@ -34,6 +34,15 @@ $block: ".purple-profile"
 
   &_page_user-profile
 
+  &_page_contacts-index
+    @media screen and (max-width: 960px)
+      flex-direction: row
+      align-items: flex-start
+
+    @media screen and (max-width: 640px)
+      flex-direction: column
+      align-items: center
+
 
   // $Profile service area
   &__service
@@ -174,6 +183,15 @@ $block: ".purple-profile"
       padding-left: 0
       padding-top: 20px
 
+      #{$block}_page_contacts-index &
+        padding-left: 20px
+        padding-top: 0
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_contacts-index &
+        padding-left: 0
+        padding-top: 20px
+
 
   // $Profile header area
   &__header
@@ -187,6 +205,13 @@ $block: ".purple-profile"
 
     @media screen and (max-width: 960px)
       text-align: center
+
+      #{$block}_page_contacts-index &
+        text-align: left
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_contacts-index &
+        text-align: center
 
     &:not(:last-child)
       margin-bottom: 20px
@@ -202,9 +227,6 @@ $block: ".purple-profile"
     font-weight: 400
 
     #{$block}_layout_column &
-      text-align: center
-
-    @media screen and (max-width: 960px)
       text-align: center
 
     &:not(:last-child)
@@ -234,6 +256,7 @@ $block: ".purple-profile"
     list-style: none
     margin: 0
     padding: 0
+    text-align: left
 
     &:not(:last-child)
       margin-bottom: 20px
@@ -304,6 +327,7 @@ $block: ".purple-profile"
   // $Profile text faded
   &__text-faded
     color: $c-text-secondary
+    vertical-align: top
 
 
   // $Profile text bold
