@@ -130,6 +130,8 @@ $block: ".purple-panel"
 
   &_page_contacts-index
 
+  &_page_site-issues
+
 
   // $Panel header
   &__header
@@ -140,10 +142,9 @@ $block: ".purple-panel"
     align-items: center
     width: 100%
     padding: 20px
-    border-bottom: 1px solid $c-border-primary
 
-    #{$block}_role_manager &
-      border-color: $c-border-secondary
+    #{$block}_page_site-issues &
+      display: block
 
     @media screen and (max-width: 640px)
       #{$block}_page_contacts-index &
@@ -155,6 +156,12 @@ $block: ".purple-panel"
     @media screen and (max-width: 400px)
       #{$block}_page_counting-history &
         flex-wrap: wrap
+
+    &:not(:last-child)
+      border-bottom: 1px solid $c-border-primary
+
+      #{$block}_role_manager &
+        border-color: $c-border-secondary
 
     // $Panel header MOD: adjust left corner
     &_adjust_corner-left
@@ -191,6 +198,12 @@ $block: ".purple-panel"
   &__header-info
     flex-grow: 1
     flex-shrink: 1
+    display: block
+    width: 100%
+
+
+  // $Panel header field
+  &__header-field
     display: block
     width: 100%
 
@@ -246,6 +259,13 @@ $block: ".purple-panel"
       align-items: stretch
       padding-left: 40px
 
+    #{$block}_page_site-issues &
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-items: center
+      padding-left: 20px
+
     @media screen and (max-width: 640px)
       #{$block}_page_contacts-index &
         flex-direction: row
@@ -269,6 +289,11 @@ $block: ".purple-panel"
         flex-grow: 1
         margin-top: 15px
 
+      #{$block}_page_site-issues &
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+
 
   // $Panel header action
   &__header-action
@@ -283,6 +308,9 @@ $block: ".purple-panel"
       #{$block}_page_contacts-index &
         margin-bottom: 15px
 
+      #{$block}_page_site-issues &
+        margin-right: 20px
+
       @media screen and (max-width: 640px)
         #{$block}_page_contacts-index &
           margin-right: 15px
@@ -290,6 +318,11 @@ $block: ".purple-panel"
 
       @media screen and (max-width: 480px)
         #{$block}_page_contacts-index &
+          margin-right: 0
+          margin-bottom: 15px
+
+      @media screen and (max-width: 400px)
+        #{$block}_page_site-issues &
           margin-right: 0
           margin-bottom: 15px
 
@@ -771,6 +804,12 @@ $block: ".purple-panel"
     &_role_dropdown#{&}_state_closed
       &:before
         content: '\e919'
+
+    // $Panel toggle MOD: role settings
+    &_role_settings
+      &:before
+        content: '\e913'
+        font-size: 30px
 
 
   // $Panel numbers
