@@ -95,12 +95,12 @@ $block: ".purple-form-checkbox"
     position: relative
     display: inline-block
     min-height: 25px
+    padding-left: 35px
     font-family: $f-sans
     font-size: 14px
-    color: $c-text-primary
-    font-weight: 400
     line-height: 25px
-    padding-left: 35px
+    font-weight: 400
+    color: $c-text-primary
 
     #{$block}__input:disabled ~ &
       cursor: not-allowed
@@ -158,6 +158,18 @@ $block: ".purple-form-checkbox"
     // $Common form checkbox input label text MOD: no-wrap text
     &_adjust_no-wrap
       white-space: nowrap
+
+    // $Common form checkbox input label text MOD: visible label text on xs screens
+    &_adjust_visible-xs
+      padding-left: 35px
+
+      @media screen and (min-width: 401px)
+        width: 27px
+        height: 27px
+        padding-left: 27px
+        overflow: hidden
+        color: transparent
+        white-space: nowrap
 
     // $Common form checkbox input label text MOD: type reversed label text
     &_type_reversed
