@@ -112,19 +112,22 @@ $block: ".purple-tab-nav"
 
     &:hover,
     &:focus
-      background-color: $c-accent-primary
       color: $c-text-light
+      background-color: $c-accent-primary
+      border-color: $c-accent-primary
       outline: none
 
     &:disabled
-      background-color: $c-gray-ultra-light
       color: $c-text-secondary
+      background-color: $c-gray-ultra-light
+      border-color: $c-gray-ultra-light
       cursor: not-allowed
 
     &:disabled:hover,
     &:disabled:focus
-      background-color: $c-gray-ultra-light
       color: $c-text-secondary
+      background-color: $c-gray-ultra-light
+      border-color: $c-gray-ultra-light
 
     // $Tab navigation control MOD: size small
     &_size_s
@@ -143,45 +146,55 @@ $block: ".purple-tab-nav"
 
     // $Tab navigation control MOD: state ok
     &_state_ok
-      background-color: $c-accent-green
       color: $c-text-light
+      background-color: $c-accent-green
+      border-color: $c-accent-green
 
       &:hover
         background-color: $c-accent-green
+        border-color: $c-accent-green
 
     // $Tab navigation control MOD: state warning
     &_state_warning
-      background-color: $c-accent-orange
       color: $c-text-light
+      background-color: $c-accent-orange
+      border-color: $c-accent-orange
 
       &:hover
         background-color: $c-accent-orange
+        border-color: $c-accent-orange
 
     // $Tab navigation control MOD: state alert
     &_state_alert
-      background-color: $c-accent-red
       color: $c-text-light
+      background-color: $c-accent-red
+      border-color: $c-accent-red
 
       &:hover
         background-color: $c-accent-red
+        border-color: $c-accent-red
 
     // $Tab navigation control MOD: state inactive
     &_state_inactive
-      background-color: $c-gray-ultra-light
       color: $c-text-secondary
+      background-color: $c-gray-ultra-light
+      border-color: $c-gray-ultra-light
       cursor: not-allowed
 
       &:hover
-        background-color: $c-gray-ultra-light
         color: $c-text-secondary
+        background-color: $c-gray-ultra-light
+        border-color: $c-gray-ultra-light
 
     // $Tab navigation control MOD: state active
     &_state_active
-      background-color: $c-accent-primary
       color: $c-text-light
+      background-color: $c-accent-primary
+      border-color: $c-accent-primary
 
       &:hover
         background-color: $c-accent-primary
+        border-color: $c-accent-primary
         cursor: default
 
 
@@ -270,14 +283,14 @@ $block: ".purple-tab-nav"
     font-family: $f-sans
     font-size: 14px
     line-height: 1.2
-    color: $c-accent-blue
+    color: $c-accent-primary
     text-align: center
     text-decoration: none
     transition: all .3s
     cursor: pointer
 
     &:hover
-      color: $c-accent-blue
+      color: $c-accent-primary
       text-decoration: underline
 
     &:not(:last-child)
@@ -285,13 +298,13 @@ $block: ".purple-tab-nav"
 
     // $Tab navigation meta action MOD: role button light
     &_type_button-light
-      border: 2px solid $c-accent-blue
+      border: 2px solid $c-accent-primary
       padding: 5px 2px
       border-radius: 4px
 
       &:hover
         color: $c-text-light
-        background-color: $c-accent-blue
+        background-color: $c-accent-primary
         text-decoration: none
 
 
