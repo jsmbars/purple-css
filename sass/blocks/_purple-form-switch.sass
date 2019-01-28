@@ -62,12 +62,14 @@ $block: ".purple-form-switch"
 
 
   // $Common form switch input label
-  &__input-label
+  // $Common form switch value
+  &__input-label,
+  &__value
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    cursor: pointer
+    cursor: default
 
     // $Common form switch input label MOD: adjust field
     // $Common form switch input label MOD: adjust field fluid
@@ -79,7 +81,6 @@ $block: ".purple-form-switch"
       #{$block}__label + &
         justify-content: flex-start
 
-
     // $Common form switch input label MOD: adjust fluid field
     &_adjust_field-fluid
       @media screen and (max-width: 960px)
@@ -87,7 +88,9 @@ $block: ".purple-form-switch"
 
 
   // $Common form switch input label text
-  &__input-label-text
+  // $Common form switch value text
+  &__input-label-text,
+  &__value-text
     position: relative
     display: inline-block
     min-height: 25px
@@ -98,11 +101,9 @@ $block: ".purple-form-switch"
     line-height: 25px
     padding-left: 60px
 
-    #{$block}__input:disabled ~ &
-      cursor: not-allowed
-
     &:before
       content: ""
+      box-sizing: border-box
       position: absolute
       top: 0
       left: 0
@@ -113,14 +114,11 @@ $block: ".purple-form-switch"
       border: 1px solid $c-border-primary
       border-radius: 2px
 
-      #{$block}__input:disabled ~ &
-        background-color: $c-gray-ultra-light
-
     &:after
       content: ""
       box-sizing: border-box
       position: absolute
-      top: 2px
+      top: 1px
       left: 2px
       display: block
       width: 23px
@@ -128,10 +126,6 @@ $block: ".purple-form-switch"
       border-radius: 2px
       background-color: $c-gray-light
       transition: all .3s
-
-      #{$block}__input:checked ~ &
-        background-color: $c-accent-primary
-        left: 27px
 
     // $Common form switch input label text MOD: no-label text
     &:empty
@@ -154,10 +148,6 @@ $block: ".purple-form-switch"
         left: auto
         right: 27px
 
-        #{$block}__input:checked ~ &
-          left: auto
-          right: 2px
-
       &:empty
         padding-left: 0
         padding-right: 50px
@@ -165,3 +155,54 @@ $block: ".purple-form-switch"
     // $Common form switch input label text MOD: small text
     &_size_s
       font-size: 12px
+
+
+  &__input-label-text
+    cursor: pointer
+
+    #{$block}__input:disabled ~ &
+      cursor: not-allowed
+
+    &:before
+      #{$block}__input:disabled ~ &
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
+    &:after
+      #{$block}__input:checked ~ &
+        background-color: $c-accent-primary
+        left: 28px
+
+      #{$block}__input:checked:disabled ~ &
+        opacity: .75
+
+    &_type_reversed
+      &:after
+        #{$block}__input:checked ~ &
+          left: auto
+          right: 1px
+
+
+  &__value-text
+    cursor: default
+
+    &_type_disabled
+      &:before
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
+    &_type_checked
+      &:after
+        background-color: $c-accent-primary
+        left: 28px
+
+    &_type_checked#{&}_type_disabled
+      &:after
+        background-color: $c-accent-primary
+        opacity: .75
+
+    &_type_checked#{&}_type_reversed
+      &:after
+        left: auto
+        right: 1px
+
