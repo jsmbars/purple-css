@@ -62,12 +62,14 @@ $block: ".purple-form-checkbox"
 
 
   // $Common form checkbox input label
-  &__input-label
+  // $Common form checkbox value
+  &__input-label,
+  &__value
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    cursor: pointer
+    cursor: default
 
     // Fix nowrap issue in IE11
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
@@ -83,7 +85,6 @@ $block: ".purple-form-checkbox"
       #{$block}__label + &
         justify-content: flex-start
 
-
     // $Common form checkbox input label MOD: adjust fluid field
     &_adjust_field-fluid
       @media screen and (max-width: 960px)
@@ -91,7 +92,9 @@ $block: ".purple-form-checkbox"
 
 
   // $Common form checkbox input label text
-  &__input-label-text
+  // $Common form checkbox value
+  &__input-label-text,
+  &__value-text
     position: relative
     display: inline-block
     min-height: 25px
@@ -102,11 +105,9 @@ $block: ".purple-form-checkbox"
     font-weight: 400
     color: $c-text-primary
 
-    #{$block}__input:disabled ~ &
-      cursor: not-allowed
-
     &:before
       content: ""
+      box-sizing: border-box
       position: absolute
       top: 0
       left: 0
@@ -116,15 +117,6 @@ $block: ".purple-form-checkbox"
       background-color: $c-bg-light
       border: 1px solid $c-border-primary
       border-radius: 2px
-
-      #{$block}__input:checked ~ &
-        background-color: $c-accent-primary
-        border-color: $c-accent-primary
-
-      #{$block}__input:disabled ~ &,
-      #{$block}__input:checked:disabled ~ &,
-        background-color: $c-gray-ultra-light
-        border-color: $c-border-primary
 
     &:after
       content: "\e914"
@@ -137,19 +129,13 @@ $block: ".purple-form-checkbox"
       display: block
       width: 25px
       height: 25px
-      padding-left: 2px
+      padding-left: 1px
       font-family: icons
       font-size: 18px
-      line-height: 25px
+      line-height: 24px
       color: $c-text-light
       text-align: center
       visibility: hidden
-
-      #{$block}__input:checked ~ &
-        visibility: visible
-
-      #{$block}__input:checked:disabled ~ &
-        color: $c-text-primary
 
     // $Common form checkbox input label text MOD: no-label text
     &:empty
@@ -164,9 +150,9 @@ $block: ".purple-form-checkbox"
       padding-left: 35px
 
       @media screen and (min-width: 401px)
-        width: 27px
-        height: 27px
-        padding-left: 27px
+        width: 25px
+        height: 25px
+        padding-left: 25px
         overflow: hidden
         color: transparent
         white-space: nowrap
@@ -184,12 +170,65 @@ $block: ".purple-form-checkbox"
         left: auto
         right: 0
         padding-left: 0
-        padding-right: 2px
+        padding-right: 1px
 
       &:empty
         padding-left: 0
         padding-right: 25px
 
+      &_type_reversed#{&}_adjust_visible-xs
+        padding-left: 0
+        padding-right: 35px
+
+        @media screen and (min-width: 401px)
+          padding-right: 25px
+
     // $Common form checkbox input label text MOD: small text
     &_size_s
       font-size: 12px
+
+
+  &__input-label-text
+    cursor: pointer
+
+    #{$block}__input:disabled ~ &
+      cursor: not-allowed
+
+    &:before
+      #{$block}__input:disabled ~ &
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
+      #{$block}__input:checked ~ &
+        background-color: $c-accent-primary
+        border-color: $c-accent-primary
+
+      #{$block}__input:checked:disabled ~ &
+        background-color: $c-gray-light
+        border-color: $c-gray-light
+
+    &:after
+      #{$block}__input:checked ~ &
+        visibility: visible
+
+
+  &__value-text
+    cursor: default
+
+    &_type_disabled
+      &:before
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
+    &_type_checked
+      &:before
+        background-color: $c-accent-primary
+        border-color: $c-accent-primary
+
+      &:after
+        visibility: visible
+
+    &_type_checked#{&}_type_disabled
+      &:before
+        background-color: $c-gray-light
+        border-color: $c-gray-light
